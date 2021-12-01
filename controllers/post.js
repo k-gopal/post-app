@@ -6,6 +6,10 @@ const deleteSchema = require('../schemas/deleteSchema');
 const listPostSchema = require('../schemas/listPostSchema');
 const { addPost, addComment, addLike, deletePost, listPosts, getCommentsByPostId } = require('../services/postService');
 const { sendResponseObject } = require('../util/commonFunctions');
+const { connect } = require('../database/database');
+
+//db connection
+if (typeof client === "undefined") var client = connect();
 
 
 // function to add post
