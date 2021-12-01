@@ -1,0 +1,852 @@
+{
+	"info": {
+		"_postman_id": "4627e348-a803-4a05-88e0-b32dd42b3b5d",
+		"name": "Post-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Sign Up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/auth/signUp",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"signUp"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sign Up Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"khichargopal11@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/signUp",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"signUp"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "x-auth-token"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "121"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"79-m5TZ48+KD385eNcT7j5BqrF5dp4\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 01 Dec 2021 07:08:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"SUCCESS\",\n    \"statusCode\": 200,\n    \"message\": \"OTP sent successfully.\",\n    \"payload\": [\n        {\n            \"email\": \"khichargopal11@gmail.com\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Sign In",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/auth/signIn",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"signIn"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Sign In Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"khichargopal11@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/signIn",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"signIn"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "x-auth-token"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "121"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"79-m5TZ48+KD385eNcT7j5BqrF5dp4\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 01 Dec 2021 08:15:34 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"SUCCESS\",\n    \"statusCode\": 200,\n    \"message\": \"OTP sent successfully.\",\n    \"payload\": [\n        {\n            \"email\": \"khichargopal11@gmail.com\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Verify OTP",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/auth/verifyOtp",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"verifyOtp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Details",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/auth/userDetails",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth",
+						"userDetails"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "User Details Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Gopal\",\n    \"lastName\": \"Khichar\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/userDetails",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"userDetails"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "x-auth-token"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "148"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"94-cMQsVEI9Taz9d1wiO/tyeyPGnBk\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 01 Dec 2021 07:11:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"SUCCESS\",\n    \"statusCode\": 200,\n    \"message\": \"User details updated successfully.\",\n    \"payload\": [\n        {\n            \"body\": {\n                \"firstName\": \"Gopal\",\n                \"lastName\": \"Khichar\"\n            }\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "List Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/post/list",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"post",
+						"list"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "List Post Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sort\": \"createdAt\",\n    \"sortStyle\": 1,\n    \"page\":1,\n    \"limit\":10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/post/list",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"post",
+								"list"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "x-auth-token"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "600"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"258-AObq51bCEsWQoHt7qbt0OMLs5Vg\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 01 Dec 2021 07:19:33 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"SUCCESS\",\n    \"statusCode\": 200,\n    \"message\": \"Posts fetched successfully.\",\n    \"payload\": [\n        [\n            {\n                \"total\": [\n                    {\n                        \"total\": 2\n                    }\n                ],\n                \"data\": [\n                    {\n                        \"_id\": \"61a721b44d37b7ce16696c73\",\n                        \"title\": \"Testing create Post 1\",\n                        \"desc\": \"Description\",\n                        \"comments\": [],\n                        \"likes\": [],\n                        \"createdBy\": \"khichargopal11@gmail.com\",\n                        \"createdAt\": \"2021-12-01T07:18:12.359Z\",\n                        \"updatedAt\": \"2021-12-01T07:18:12.359Z\",\n                        \"__v\": 0\n                    },\n                    {\n                        \"_id\": \"61a721ba4d37b7ce16696c76\",\n                        \"title\": \"Testing create Post 2\",\n                        \"desc\": \"Description\",\n                        \"comments\": [],\n                        \"likes\": [],\n                        \"createdBy\": \"khichargopal11@gmail.com\",\n                        \"createdAt\": \"2021-12-01T07:18:18.372Z\",\n                        \"updatedAt\": \"2021-12-01T07:18:18.372Z\",\n                        \"__v\": 0\n                    }\n                ]\n            }\n        ]\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/post/add",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"post",
+						"add"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Post Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Testing create Post\",\n    \"desc\": \"Description\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/post/add",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"post",
+								"add"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "x-auth-token"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "124"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"7c-Kz8K6XpPnuEexnqYEpc1nZenvrw\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 01 Dec 2021 07:13:56 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"SUCCESS\",\n    \"statusCode\": 200,\n    \"message\": \"Post is created succesfully.\",\n    \"payload\": [\n        {\n            \"id\": \"61a720b44d37b7ce16696c6a\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Comment On Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/post/comment",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"post",
+						"comment"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Comment On Post Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"61a720b44d37b7ce16696c6a\",\n    \"comment\": \"Hi there\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/post/comment",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"post",
+								"comment"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "x-auth-token"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "127"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"7f-d1650uO2j/P7z+u9i+7Ul/T9xG4\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 01 Dec 2021 07:15:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"SUCCESS\",\n    \"statusCode\": 200,\n    \"message\": \"Comment added successfully.\",\n    \"payload\": [\n        {\n            \"postId\": \"61a720b44d37b7ce16696c6a\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Like a Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/post/like",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"post",
+						"like"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Like a Post Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"61a720b44d37b7ce16696c6a\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/post/like",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"post",
+								"like"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "x-auth-token"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "137"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"89-yJ0XyLWmhwfIBfvhfbny4TSXWrE\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 01 Dec 2021 07:16:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"SUCCESS\",\n    \"statusCode\": 200,\n    \"message\": \"You have successfully liked the post.\",\n    \"payload\": [\n        {\n            \"postId\": \"61a720b44d37b7ce16696c6a\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Post",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/post/delete",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"post",
+						"delete"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Post Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"61a720b44d37b7ce16696c6a\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/post/delete",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"post",
+								"delete"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "x-auth-token"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "139"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"8b-6yslADPYZBUVsnsr9OONcaMCx8o\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 01 Dec 2021 07:17:10 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"SUCCESS\",\n    \"statusCode\": 200,\n    \"message\": \"You have successfully deleted the post.\",\n    \"payload\": [\n        {\n            \"postId\": \"61a720b44d37b7ce16696c6a\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Comments By Post Id",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": \"61a721b44d37b7ce16696c73\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/post/getComments",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"post",
+						"getComments"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
