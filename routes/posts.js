@@ -1,5 +1,5 @@
 const express = require('express');
-const { postListFunc, addPostFunc, addCommentFunc, addLikeFunc, deletePostFunc } = require('../controllers/post');
+const { postListFunc, addPostFunc, addCommentFunc, addLikeFunc, deletePostFunc, getComments } = require('../controllers/post');
 const router = express.Router();
 const { authenticate } = require('../services/authenticate');
 
@@ -17,6 +17,9 @@ router.post('/comment', authenticate, addCommentFunc);
 router.post('/like', authenticate, addLikeFunc);
 
 // to delete a post
-router.post('/delete', authenticate, deletePostFunc)
+router.post('/delete', authenticate, deletePostFunc);
+
+//get comments by post id
+router.post('/getComments', authenticate, getComments);
 
 module.exports = router;

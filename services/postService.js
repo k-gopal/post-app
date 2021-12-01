@@ -112,10 +112,29 @@ const listPosts = async (data) => {
     }
 }
 
+//get comments by post id
+const getCommentsByPostId = async (id) => {
+    try {
+        let result = await Post.findOne({_id: id, isDeleted: false},{
+            "_id":1,
+            "comments": 1
+        });
+
+        if(result){
+            return result;
+        }
+        return false;
+    } catch (error) {
+        console.log("Error in getCommentsByPostId: ", error);
+        return false;
+    }
+}
+
 module.exports = {
     addPost,
     addComment,
     addLike,
     deletePost,
-    listPosts
+    listPosts,
+    getCommentsByPostId
 }

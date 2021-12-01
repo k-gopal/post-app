@@ -3,10 +3,15 @@ const cookieParser = require('cookie-parser');
 const env = require('dotenv');
 const cors = require('cors');
 const logger = require('morgan');
+const { connect } = require('./database/database');
 
 //env config express initialization
 env.config();
 const app = express();
+
+//db connection
+if (typeof client === "undefined") var client = connect();
+
 
 // importing routes
 const authRoute = require('./routes/authentication');

@@ -1,14 +1,11 @@
 const nodemailer = require('nodemailer');
 const HTTP_CODE = require('../util/constants');
 const { sendResponseObject, generateOtp, sendOTPEmailVerify, generateAccessToken } = require('../util/commonFunctions');
-const { connect } = require('../database/database');
 const emailVerificationSchema = require('../schemas/emailVerificationSchema');
 const verifyOtpSchema = require('../schemas/verifyOtpSchema');
 const { saveEmailAndOtp, saveOtp, verifyOtp, checkUser, updateOtp, updateUserDetails } = require('../services/userService');
 const signUpSchema = require('../schemas/signUpSchema');
 
-//db connection
-if (typeof client === "undefined") var client = connect();
 
 // function to signup user and send otp on email
 const signUpFunc = async (req, res, next) => {

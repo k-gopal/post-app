@@ -1,15 +1,12 @@
 const HTTP_CODE = require('../util/constants');
-const { connect } = require('../database/database');
 const postSchema = require('../schemas/postSchema');
 const commentSchema = require('../schemas/commentSchema');
 const likeSchema = require('../schemas/likeSchema');
 const deleteSchema = require('../schemas/deleteSchema');
 const listPostSchema = require('../schemas/listPostSchema');
-const { addPost, addComment, addLike, deletePost, listPosts } = require('../services/postService');
+const { addPost, addComment, addLike, deletePost, listPosts, getCommentsByPostId } = require('../services/postService');
 const { sendResponseObject } = require('../util/commonFunctions');
 
-//db connection
-if (typeof client === "undefined") var client = connect();
 
 // function to add post
 const addPostFunc = async (req, res, next) => {
@@ -22,7 +19,7 @@ const addPostFunc = async (req, res, next) => {
             return res.send(sendResponseObject("FAILURE", HTTP_CODE.BAD_REQUEST, [validation.error], "Not able to post, please try again. Bad request."));
         }
 
-        body.createBy = req.user;
+        body.createdBy = req.user;
 
         let addPostResult = await addPost(body);
 
@@ -137,11 +134,34 @@ const deletePostFunc = async (req, res, next) => {
     }
 }
 
+//get comments by post id
+const getComments = async (req, res, next) => {
+    try {
+        console.log("Body: ", req.body);
+        let body = req.body;
+        let validation = deleteSchema.validate(body);
+
+        if (validation.error) {
+            return res.send(sendResponseObject("FAILURE", HTTP_CODE.BAD_REQUEST, [validation.error], "Bad request."));
+        }
+
+        let getCommentsResult = await getCommentsByPostId(body.id);
+        if (getCommentsResult) {
+            return res.send(sendResponseObject("SUCCESS", HTTP_CODE.SUCCESS, [getCommentsResult], "You have successfully fetched comments for the post."));
+        } else {
+            return res.send(sendResponseObject("FAILURE", HTTP_CODE.FAILURE, [], "Not able to fetch comments for the post, please try again."));
+        }
+    } catch (error) {
+        console.log("Error: ", error);
+        return res.send(sendResponseObject("FAILURE", HTTP_CODE.INTERNAL_SERVER_ERROR, [error], "Not able to fetch comments for the post, please try again."));
+    }
+}
 //functions are exported
 module.exports = {
     addCommentFunc,
     addLikeFunc,
     addPostFunc,
     postListFunc,
-    deletePostFunc
+    deletePostFunc,
+    getComments
 }
