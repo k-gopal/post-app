@@ -18,6 +18,7 @@ Following things are covered in it:
   - API to like any post created by anyone
   - API to delete a post created by just you
   - API to list all the active posts (accepting pagination and sorting)
+  - API to fetch comments for a particular post
 
 
 ### To run this project
