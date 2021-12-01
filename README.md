@@ -3,6 +3,9 @@
 This is project is a basic backend for a post application.
 
 The Postman collection contains all the URL and examples.
+Import the collection in your postman and can perform API calls.
+
+Deployed URL: [Post-app](https://post-application-123.herokuapp.com/) 
 
 Following things are covered in it:
   - sign up using email (verified via otp sent on the same email)
@@ -15,3 +18,10 @@ Following things are covered in it:
   - API to like any post created by anyone
   - API to delete a post created by just you
   - API to list all the active posts (accepting pagination and sorting)
+
+
+### To run this project
+Clone this into your local machine
+ - cd post-app
+ - npm install
+ - node index.js / npm start
